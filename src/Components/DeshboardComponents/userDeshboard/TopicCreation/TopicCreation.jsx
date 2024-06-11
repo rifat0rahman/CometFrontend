@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import TopicCreationOutput from "./TopicCreationOutput";
+import useAxiosSource from "../../../CustomComponents/useAxiousSorce,jsx";
 
 export default function TopicCreation() {
+  const { axiosSource } = useAxiosSource();
   const {
     register,
     handleSubmit,
@@ -10,10 +12,14 @@ export default function TopicCreation() {
 
   const onSubmit = (data) => {
     console.log(data);
+    axiosSource
+      .post("/", data)
+      .then((result) => console.log(result.data))
+      .then((err) => console.log(err));
   };
 
   return (
-    <div className="w-full h-[celc(100%-50px)] md:px-5 px-2 overflow-y-auto">
+    <div className="w-full h-[celc(100%-50px)] relative md:px-5 px-2 overflow-y-auto">
       <div className="w-full p-2">
         <h1 className="text-[25px] font-bold">Discover Topic ideas</h1>
         <p className="text-[20px] py-[10px]">
@@ -63,7 +69,7 @@ export default function TopicCreation() {
             </label>
             <input
               id="whatDoYouDo"
-              {...register("whatDoYouDo", { required: true })}
+              {...register("does", { required: true })}
               placeholder="I help founders build personal brand on LinkedIn"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
