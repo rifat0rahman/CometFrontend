@@ -12,7 +12,7 @@ export default function DeshboardRoot() {
         </div>
         <Outlet></Outlet>
         <div className="w-[250px] cursor-pointer items-center fixed bottom-3 right-3 grid grid-cols-4 gap-4">
-          <div className="w-full col-span-3 p-2 customshadow rounded-md">
+          <div className="w-full bg-white col-span-3 p-2 customshadow rounded-md">
             <p className="text-black text-md">Hay there!</p>
             <p className="text-gray-800 text-sm">How can i help you?</p>
           </div>

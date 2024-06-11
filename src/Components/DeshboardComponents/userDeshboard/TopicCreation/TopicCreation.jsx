@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import TopicCreationOutput from "./TopicCreationOutput";
 
 export default function TopicCreation() {
   const {
@@ -101,6 +102,8 @@ export default function TopicCreation() {
           </button>
         </form>
       </div>
+      {/* ---------------------------------creation idea output------------------------------- */}
+      <TopicCreationOutput />
     </div>
   );
 }
