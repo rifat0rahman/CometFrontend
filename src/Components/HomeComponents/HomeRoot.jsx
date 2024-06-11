@@ -1,3 +1,9 @@
+import { Outlet } from "react-router-dom";
+
 export default function HomeRoot() {
-  return <div>HomeRoot</div>;
+  return (
+    <div>
+      <Outlet></Outlet>
+    </div>
+  );
 }
