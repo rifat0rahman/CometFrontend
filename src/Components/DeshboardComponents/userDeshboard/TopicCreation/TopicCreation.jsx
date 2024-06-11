@@ -12,7 +12,7 @@ export default function TopicCreation() {
   };
 
   return (
-    <div className="w-full h-screen md:px-5 px-2 overflow-scroll pt-5 overflow-y-auto">
+    <div className="w-full h-screen md:px-5 px-2 overflow-scroll overflow-y-auto">
       <div className="w-full p-2">
         <h1 className="text-[25px] font-bold">Discover Topic ideas</h1>
         <p className="text-[20px] py-[10px]">
@@ -29,7 +29,10 @@ export default function TopicCreation() {
 
       {/* ----------------------------topic idea form here ----------------------------- */}
       <div className="w-full">
-        <form onSubmit={handleSubmit(onSubmit)} className=" py-4 w-[400px]">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className=" py-4 w-full sm:w-[400px]"
+        >
           <div>
             <label
               htmlFor="role"
