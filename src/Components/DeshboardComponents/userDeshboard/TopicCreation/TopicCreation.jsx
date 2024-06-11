@@ -12,7 +12,7 @@ export default function TopicCreation() {
   };
 
   return (
-    <div className="w-full h-screen md:px-5 px-2 overflow-scroll overflow-y-auto">
+    <div className="w-full h-[celc(100%-50px)] md:px-5 px-2 overflow-y-auto">
       <div className="w-full p-2">
         <h1 className="text-[25px] font-bold">Discover Topic ideas</h1>
         <p className="text-[20px] py-[10px]">
