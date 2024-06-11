@@ -7,15 +7,18 @@ export default function TopicCreation() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+
     axiosSource
       .post("/", data)
       .then((result) => console.log(result.data))
       .then((err) => console.log(err));
+    reset();
   };
 
   return (
