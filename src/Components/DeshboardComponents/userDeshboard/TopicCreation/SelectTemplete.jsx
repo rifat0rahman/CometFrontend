@@ -1,4 +1,5 @@
 import { CiSquareRemove } from "react-icons/ci";
+import TabsComponent from "./TabsComponent";
 
 export default function SelectTemplete({ callSelectoption, removecallSelect }) {
   return (
@@ -11,6 +12,9 @@ export default function SelectTemplete({ callSelectoption, removecallSelect }) {
             className="text-xl text-black cursor-pointer"
           />
         </div>
+        {/* ----------------------------tab start from here ------------------------------ */}
+
+        <TabsComponent />
       </div>
     </div>
   );
