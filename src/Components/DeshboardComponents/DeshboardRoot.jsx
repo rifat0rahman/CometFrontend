@@ -6,7 +6,7 @@ export default function DeshboardRoot() {
   return (
     <div className="w-full relative flex h-screen">
       <DeshboardNav></DeshboardNav>
-      <div className="w-full md:w-[calc(100%-250px)] relative h-screen">
+      <div className="w-full md:w-[calc(100%-250px)] overflow-y-auto relative h-screen">
         <div className="w-full  bg-blue-400  text-white ">
           <p className="text-center">this is simple notice box</p>
         </div>

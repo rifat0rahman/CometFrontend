@@ -2,29 +2,36 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import TopicCreationOutput from "./TopicCreationOutput";
 import useAxiosSource from "../../../CustomComponents/useAxiousSorce,jsx";
+import { useState } from "react";
 
 export default function TopicCreation() {
+  const [creationTopicData, setCreationTopicData] = useState();
   const { axiosSource } = useAxiosSource();
   const [topicIdeas, setTopicIdeas] = useState([]);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+
     axiosSource
       .post("/", data)
-      .then((result) => {
-        console.log(result.data);
-        setTopicIdeas(result.data.data);
-      })
+      .then((result) => setCreationTopicData(result.data))
       .then((err) => console.log(err));
+    reset();
+  };
+
+  const validateThreeWords = (value) => {
+    const words = value.trim().split(/\s+/);
+    return words.length >= 3 || "This field requires at least 3 words";
   };
 
   return (
-    <div className="w-full h-[celc(100%-50px)] relative md:px-5 px-2 overflow-y-auto">
+    <div className="w-full h-[celc(100vh-50px)] relative md:px-5 px-2 ">
       <div className="w-full p-2">
         <h1 className="text-[25px] font-bold">Discover Topic ideas</h1>
         <p className="text-[20px] py-[10px]">
@@ -73,12 +80,12 @@ export default function TopicCreation() {
               What do you do?
             </label>
             <input
-              id="whatDoYouDo"
+              id="does"
               {...register("does", { required: true })}
               placeholder="I help founders build personal brand on LinkedIn"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
-            {errors.whatDoYouDo && (
+            {errors.does && (
               <span className="text-red-500 text-sm">
                 This field is required
               </span>
@@ -94,13 +101,16 @@ export default function TopicCreation() {
             </label>
             <input
               id="keywords"
-              {...register("keywords", { required: true })}
+              {...register("keywords", {
+                required: "This field is required",
+                validate: validateThreeWords,
+              })}
               placeholder="Startup funding, Google Ads, AI Tools, SEO, etc"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
             {errors.keywords && (
               <span className="text-red-500 text-sm">
-                This field is required
+                {errors.keywords.message}
               </span>
             )}
           </div>
@@ -114,7 +124,11 @@ export default function TopicCreation() {
         </form>
       </div>
       {/* ---------------------------------creation idea output------------------------------- */}
-      <TopicCreationOutput topicIdeas={topicIdeas} />
+      {creationTopicData ? (
+        <TopicCreationOutput creationTopicData={creationTopicData} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
