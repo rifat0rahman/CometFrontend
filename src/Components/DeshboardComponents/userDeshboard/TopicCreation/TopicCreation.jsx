@@ -23,6 +23,11 @@ export default function TopicCreation() {
     reset();
   };
 
+  const validateThreeWords = (value) => {
+    const words = value.trim().split(/\s+/);
+    return words.length >= 3 || "This field requires at least 3 words";
+  };
+
   return (
     <div className="w-full h-[celc(100vh-50px)] relative md:px-5 px-2 ">
       <div className="w-full p-2">
@@ -73,12 +78,12 @@ export default function TopicCreation() {
               What do you do?
             </label>
             <input
-              id="whatDoYouDo"
+              id="does"
               {...register("does", { required: true })}
               placeholder="I help founders build personal brand on LinkedIn"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
-            {errors.whatDoYouDo && (
+            {errors.does && (
               <span className="text-red-500 text-sm">
                 This field is required
               </span>
@@ -94,13 +99,16 @@ export default function TopicCreation() {
             </label>
             <input
               id="keywords"
-              {...register("keywords", { required: true })}
+              {...register("keywords", {
+                required: "This field is required",
+                validate: validateThreeWords,
+              })}
               placeholder="Startup funding, Google Ads, AI Tools, SEO, etc"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
             {errors.keywords && (
               <span className="text-red-500 text-sm">
-                This field is required
+                {errors.keywords.message}
               </span>
             )}
           </div>

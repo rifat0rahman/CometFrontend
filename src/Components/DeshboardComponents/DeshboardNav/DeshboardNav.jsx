@@ -27,7 +27,7 @@ export default function DeshboardNav() {
     >
       <button
         onClick={() => setCallNav(!callNav)}
-        className={`absolute block md:hidden text-black text-xl top-2 ${
+        className={`absolute block md:hidden text-black p-1 rounded-sm bg-white text-xl top-2 ${
           callNav ? " right-2" : "-right-7"
         } cursor-pointer`}
       >
@@ -39,7 +39,7 @@ export default function DeshboardNav() {
         <h1 className="text-3xl uppercase font-bold pt-2">Web Logo</h1>
       </div>
       {/* ---------------------nav link route content --------------------------- */}
-      <div className="w-full h-[calc(100%-160px)] pb-5 overflow-y-auto">
+      <div className="w-full h-[calc(100%-160px)] pb-5 overflow-x-hidden overflow-y-auto">
         <div className="w-full py-1 border-b flex justify-between items-center">
           <ul className="menu -my-2 menu-horizontal px-0">
             <li>
@@ -47,7 +47,7 @@ export default function DeshboardNav() {
                 <summary className="text-xl text-blue-500 font-bold ">
                   DEFAULT
                 </summary>
-                <ul className="p-2 w-[220px] border border-blue-500 rounded-md">
+                <ul className="p-2 w-[200px] border border-blue-500 rounded-md">
                   <li className="uppercase rounded-md hover:bg-blue-50">
                     <a>DEFAULT</a>
                   </li>

@@ -1,16 +1,18 @@
 import { useState } from "react";
+import TabTemplate from "./TabTemplate";
+import TabCustom from "./TabCustom";
 
 export default function TabsComponent() {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabData = [
-    { label: "Template", content: "Tab content 1" },
-    { label: "Custom", content: "Tab content 2" },
+    { label: "Template", content: <TabTemplate /> },
+    { label: "Custom", content: <TabCustom /> },
     { label: "My template", content: "Tab content 3" },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="flex border-b border-gray-300">
         {tabData.map((tab, index) => (
           <button
@@ -27,10 +29,7 @@ export default function TabsComponent() {
           </button>
         ))}
       </div>
-      <div className=" p-1">
-        {tabData[activeTab].content}
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+      <div className=" p-1">{tabData[activeTab].content}</div>
     </div>
   );
 }
