@@ -1,30 +1,12 @@
 import { useState } from "react";
 import SelectTemplete from "./SelectTemplete";
 
-export default function TopicCreationOutput() {
+export default function TopicCreationOutput({ creationTopicData }) {
   const [callSelectoption, setCallSelectOption] = useState(false);
 
   const removecallSelect = (data) => {
     setCallSelectOption(data);
   };
-
-  const creationTopicData = [
-    {
-      0: "Maximizing Business Efficiency: How Custom Django Backend Solutions Can Streamline Your Operations",
-    },
-    {
-      1: "The Power of Data Visualization: Enhancing Decision-Making with Vue.js Frontend Development",
-    },
-    {
-      2: "Securing Your Business: Understanding the Importance of Backend Development in Django",
-    },
-    {
-      3: "Elevating User Experience: Creating Seamless Interfaces with Vue.js Frontend Development",
-    },
-    {
-      4: "Scaling Your Business: Leveraging Full Stack Development with Django and Vue.js for",
-    },
-  ];
 
   return (
     <div

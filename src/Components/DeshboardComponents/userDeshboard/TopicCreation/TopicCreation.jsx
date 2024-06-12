@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import TopicCreationOutput from "./TopicCreationOutput";
 import useAxiosSource from "../../../CustomComponents/useAxiousSorce,jsx";
+import { useState } from "react";
 
 export default function TopicCreation() {
+  const [creationTopicData, setCreationTopicData] = useState();
   const { axiosSource } = useAxiosSource();
   const {
     register,
@@ -16,7 +18,7 @@ export default function TopicCreation() {
 
     axiosSource
       .post("/", data)
-      .then((result) => console.log(result.data))
+      .then((result) => setCreationTopicData(result.data))
       .then((err) => console.log(err));
     reset();
   };
@@ -112,7 +114,11 @@ export default function TopicCreation() {
         </form>
       </div>
       {/* ---------------------------------creation idea output------------------------------- */}
-      <TopicCreationOutput />
+      {creationTopicData ? (
+        <TopicCreationOutput creationTopicData={creationTopicData} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
