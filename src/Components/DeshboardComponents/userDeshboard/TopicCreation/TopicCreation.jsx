@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import TopicCreationOutput from "./TopicCreationOutput";
 import useAxiosSource from "../../../CustomComponents/useAxiousSorce,jsx";
 import { useState } from "react";
@@ -7,7 +6,6 @@ import { useState } from "react";
 export default function TopicCreation() {
   const [creationTopicData, setCreationTopicData] = useState();
   const { axiosSource } = useAxiosSource();
-  const [topicIdeas, setTopicIdeas] = useState([]);
   const {
     register,
     handleSubmit,
@@ -20,7 +18,9 @@ export default function TopicCreation() {
 
     axiosSource
       .post("/", data)
-      .then((result) => setCreationTopicData(result.data))
+      .then((result) => {
+        setCreationTopicData(result.data.data)
+      })
       .then((err) => console.log(err));
     reset();
   };
@@ -103,7 +103,7 @@ export default function TopicCreation() {
               id="keywords"
               {...register("keywords", {
                 required: "This field is required",
-                validate: validateThreeWords,
+                // validate: validateThreeWords,
               })}
               placeholder="Startup funding, Google Ads, AI Tools, SEO, etc"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
