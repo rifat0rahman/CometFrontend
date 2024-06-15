@@ -5,9 +5,38 @@
 * {
   transition: 0.3s;
 }
-.active {
+.HomeNav > li > .active {
+  background: transparent !important;
+  color: orange !important;
+}
+.deshboardNav > .active {
   background: rgba(0, 153, 255, 0.205) !important;
 }
 .customshadow {
   box-shadow: 0px 1px 3px rgb(168, 168, 168);
+}
+.arrow::after {
+  content: "";
+  position: absolute;
+  transform: rotate(135deg);
+  top: 19px;
+  right: 56px;
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid gray;
+  border-right: 20px solid rgba(255, 255, 255, 0);
+}
+.animation {
+  animation: jump 2s infinite;
+}
+@keyframes jump {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 55%;
+  }
+  100% {
+    top: 50%;
+  }
 }

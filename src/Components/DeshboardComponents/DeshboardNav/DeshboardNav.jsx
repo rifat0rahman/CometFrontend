@@ -83,7 +83,7 @@ export default function DeshboardNav() {
           <div
             className={`w-full ${
               createClicked ? "flex" : "hidden"
-            } my-2 flex-col`}
+            } my-2 deshboardNav flex-col`}
           >
             <NavLink
               to={`/topic_creation`}
