@@ -20,13 +20,12 @@ export default function TopicCreationOutput({ creationTopicData }) {
         />
       ) : null}
       {creationTopicData.map((item, index) => {
-        const text = item[index];
         return (
           <div
             key={index}
             className="min-w-[250px] border p-3 flex rounded-md shadow-md hover:shadow-xl flex-col justify-between gap-3"
           >
-            <h1 className="text-md font-medium">{text}</h1>
+            <h1 className="text-md font-medium">{item}</h1>
             <div className="w-full">
               <button
                 onClick={() => setCallSelectOption(!callSelectoption)}
