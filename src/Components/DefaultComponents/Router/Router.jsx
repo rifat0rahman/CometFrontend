@@ -15,6 +15,11 @@ import Account from "../../DeshboardComponents/userDeshboard/Account/Account";
 import Billing from "../../DeshboardComponents/userDeshboard/Billing/Billing";
 import Support from "../../DeshboardComponents/userDeshboard/Support/Support";
 import ProductRoadmap from "../../DeshboardComponents/userDeshboard/ProductRoadmap/ProductRoadmap";
+import Pricing from "../../HomeComponents/Pricing/Pricing";
+import Testimonials from "../../HomeComponents/Testimonials/Testimonials";
+import Blog from "../../HomeComponents/Blog/Blog";
+import FAQ from "../../HomeComponents/FAQ/FAQ";
+import Affiliate from "../../HomeComponents/Affiliate/Affiliate";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +30,26 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/pricing",
+        element: <Pricing></Pricing>,
+      },
+      {
+        path: "/testimonilas",
+        element: <Testimonials></Testimonials>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
+      },
+      {
+        path: "/affiliate",
+        element: <Affiliate></Affiliate>,
       },
     ],
   },

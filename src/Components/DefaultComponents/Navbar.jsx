@@ -10,29 +10,29 @@ export default function NavBar() {
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-bold text-white" to={"/about"}>
+        <NavLink className="font-bold text-white" to={"/pricing"}>
           Pricing
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="font-bold text-white" to={"/appartment"}>
+        <NavLink className="font-bold text-white" to={"/testimonilas"}>
           Testimonials
         </NavLink>
       </li>
 
       <li>
-        <NavLink className="font-bold text-white" to={"/contact"}>
+        <NavLink className="font-bold text-white" to={"/blog"}>
           Blog
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-bold text-white" to={"/contact"}>
+        <NavLink className="font-bold text-white" to={"/faq"}>
           FAQ
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-bold text-white" to={"/contact"}>
+        <NavLink className="font-bold text-white" to={"/affiliate"}>
           Affiliate
         </NavLink>
       </li>
@@ -40,7 +40,7 @@ export default function NavBar() {
   );
 
   return (
-    <div className="w-full bg-black border-b">
+    <div className="w-full bg-black border-b border-gray-900">
       <div className="container mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
