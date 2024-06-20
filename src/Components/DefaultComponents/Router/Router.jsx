@@ -20,6 +20,9 @@ import Testimonials from "../../HomeComponents/Testimonials/Testimonials";
 import Blog from "../../HomeComponents/Blog/Blog";
 import FAQ from "../../HomeComponents/FAQ/FAQ";
 import Affiliate from "../../HomeComponents/Affiliate/Affiliate";
+import AuthRoot from "../../HomeComponents/Authcatin/AuthRoot";
+import Login from "../../HomeComponents/Authcatin/Login";
+import SignUp from "../../HomeComponents/Authcatin/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -104,6 +107,20 @@ export const router = createBrowserRouter([
       {
         path: "/product_roadmap",
         element: <ProductRoadmap></ProductRoadmap>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AuthRoot></AuthRoot>,
+    children: [
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },

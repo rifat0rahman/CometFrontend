@@ -43,7 +43,7 @@ export default function LinkedInPostComponent() {
               </span>
             </li>
           </ul>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
+          <button className="bg-blue-600 text-white px-7 py-2 rounded-full hover:bg-blue-700">
             Start for FREE
           </button>
         </div>
