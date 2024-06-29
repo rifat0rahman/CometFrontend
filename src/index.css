@@ -5,6 +5,9 @@
 * {
   transition: 0.3s;
 }
+div.noneScroll::-webkit-scrollbar {
+  display: none;
+}
 .HomeNav > li > .active {
   background: transparent !important;
   color: orange !important;
@@ -38,5 +41,16 @@
   }
   100% {
     top: 50%;
+  }
+}
+.toleftAnimation {
+  animation: toleft 10s infinite;
+}
+@keyframes toleft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }

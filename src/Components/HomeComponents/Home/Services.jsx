@@ -1,6 +1,8 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import user from "../../../image/servicesUser.avif";
-import info from "../../../image/servicesUser.avif";
+import info from "../../../image/servicesUser2.avif";
+import { SiApple, SiTesla } from "react-icons/si";
+import { BsSpotify } from "react-icons/bs";
 
 export default function Services() {
   return (
@@ -28,8 +30,21 @@ export default function Services() {
             <p className="text-gray-800 mt-5">
               Manage and write content for your company pages
             </p>
-            <div className="w-full">
-              <img src={user} alt="" className="w-full" />
+            <div className="w-full flex flex-col gap-3 px-3 pt-6 mt-10">
+              <div className="w-full flex items-center gap-5 rounded-md p-3 bg-white">
+                <SiApple className="text-3xl text-gray-700" />
+                <span className="text-xl text-gray-600 font-medium">Apple</span>
+              </div>
+              <div className="w-full flex items-center gap-5 rounded-md p-3 bg-white">
+                <BsSpotify className="text-3xl text-green-500" />
+                <span className="text-xl text-gray-600 font-medium">
+                  Spotify
+                </span>
+              </div>
+              <div className="w-full flex items-center gap-5 rounded-md p-3 bg-white">
+                <SiTesla className="text-2xl text-white p-1 bg-red-700 rounded-full" />
+                <span className="text-xl text-gray-600 font-medium">Tesla</span>
+              </div>
             </div>
           </div>
         </div>

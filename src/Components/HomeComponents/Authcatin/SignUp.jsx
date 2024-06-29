@@ -1,5 +1,10 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import {
+  AiOutlineCheckCircle,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+} from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export default function SignUp() {
@@ -10,6 +15,17 @@ export default function SignUp() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -63,10 +79,10 @@ export default function SignUp() {
               <span className="text-red-500 text-sm">Email is required</span>
             )}
           </div>
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label className="block text-gray-700">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="********"
               className="w-full p-2 border border-gray-300 rounded mt-1"
               {...register("password", {
@@ -82,23 +98,28 @@ export default function SignUp() {
                 },
               })}
             />
+            <span
+              className="absolute right-3 top-10 cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
             {errors.password && (
               <span className="text-red-500 text-sm">
                 {errors.password.message}
               </span>
             )}
           </div>
-
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label className="block text-gray-700">Re-enter Password</label>
             <input
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               placeholder="********"
               className={`w-full p-2 border ${
                 confirmPassword
                   ? password === confirmPassword
-                    ? "border-green-500"
-                    : "border-red-500"
+                    ? "border-green-500 outline-green-500"
+                    : "border-red-500 outline-red-500"
                   : "border-gray-300"
               } rounded mt-1`}
               {...register("confirmPassword", {
@@ -107,6 +128,16 @@ export default function SignUp() {
                   value === password || "Passwords do not match",
               })}
             />
+            <span
+              className="absolute right-3 top-10 cursor-pointer"
+              onClick={toggleConfirmPasswordVisibility}
+            >
+              {showConfirmPassword ? (
+                <AiOutlineEyeInvisible />
+              ) : (
+                <AiOutlineEye />
+              )}
+            </span>
             {errors.confirmPassword && (
               <span className="text-red-500 text-sm">
                 {errors.confirmPassword.message}

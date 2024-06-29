@@ -1,4 +1,6 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import blog1 from "../../../image/blog1.avif";
+import blog2 from "../../../image/blog2.avif";
 
 export default function BlogComponent() {
   return (
@@ -10,7 +12,7 @@ export default function BlogComponent() {
         <div className="w-full flex justify-center items-center">
           <div className="w-full border-2 p-5 rounded-md">
             <div className="w-full h-[200px] overflow-hidden rounded-md flex justify-center items-center">
-              <img src="lsdjkf" alt="" className="h-full" />
+              <img src={blog1} alt="" className="min-h-full w-full" />
             </div>
             <div className="w-full h-[250px] overflow-hidden">
               <h1 className="text-3xl my-4 text-black">
@@ -32,7 +34,7 @@ export default function BlogComponent() {
         <div className="w-full flex justify-center items-center">
           <div className="w-full border-2 p-5 rounded-md">
             <div className="w-full h-[200px] overflow-hidden rounded-md flex justify-center items-center">
-              <img src="lsdjkf" alt="" className="h-full" />
+              <img src={blog2} alt="" className=" min-h-full w-full" />
             </div>
             <div className="w-full h-[250px] overflow-hidden">
               <h1 className="text-3xl my-4 text-black">

@@ -1,14 +1,24 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import {
+  AiOutlineCheckCircle,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+} from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -33,10 +43,10 @@ export default function Login() {
               </span>
             )}
           </div>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <label className="block text-gray-700">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="********"
               className="w-full p-2 border border-gray-300 rounded mt-1"
               {...register("password", {
@@ -52,6 +62,12 @@ export default function Login() {
                 },
               })}
             />
+            <span
+              className="absolute right-3 top-10 cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
             {errors.password && (
               <span className="text-red-500 text-sm">
                 {errors.password.message}
@@ -76,7 +92,7 @@ export default function Login() {
         </form>
         <div className="w-full flex justify-center items-center mt-4">
           <Link to="/signup" className="text-md text-center text-blue-600">
-            Create a new account
+            Create a new account! SignUp
           </Link>
         </div>
       </div>
