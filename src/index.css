@@ -5,7 +5,7 @@
 * {
   transition: 0.3s;
 }
-div.noneScroll::-webkit-scrollbar {
+.noneScroll::-webkit-scrollbar {
   display: none;
 }
 .HomeNav > li > .active {

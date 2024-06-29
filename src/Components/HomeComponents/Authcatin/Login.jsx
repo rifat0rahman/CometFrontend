@@ -55,11 +55,6 @@ export default function Login() {
                   value: 6,
                   message: "Password must be at least 6 characters long",
                 },
-                pattern: {
-                  value: /^(?=.*[A-Z])(?=.*\d).{6,}$/,
-                  message:
-                    "Password must contain at least one number and one uppercase letter",
-                },
               })}
             />
             <span
