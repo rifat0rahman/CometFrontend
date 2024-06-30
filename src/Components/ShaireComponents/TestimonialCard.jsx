@@ -4,7 +4,7 @@ import linkidin from "../../image/Linkedin.png";
 
 export default function TestimonialCard() {
   return (
-    <div className="min-w-[500px] mx-5 p-6 bg-white border rounded-lg shadow-md">
+    <div className="max-w-[500px] mx-5 p-6 bg-white border rounded-lg shadow-md">
       <div className="flex items-center mb-4">
         <img
           className="w-12 h-12 rounded-full"
