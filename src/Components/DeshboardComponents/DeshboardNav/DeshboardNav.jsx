@@ -27,8 +27,8 @@ export default function DeshboardNav() {
     >
       <button
         onClick={() => setCallNav(!callNav)}
-        className={`absolute block md:hidden text-black p-1 rounded-sm bg-white text-xl top-2 ${
-          callNav ? " right-2" : "-right-7"
+        className={`absolute block md:hidden text-black p-1 rounded-sm text-xl top-2 ${
+          callNav ? " right-3" : "-right-7"
         } cursor-pointer`}
       >
         {callNav ? <CiSquareRemove /> : <FaList />}
@@ -124,7 +124,7 @@ export default function DeshboardNav() {
             {manageClicked ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
           <div
-            className={`w-full ${
+            className={`w-full deshboardNav ${
               manageClicked ? "flex" : "hidden"
             } my-2 flex-col`}
           >
@@ -161,7 +161,7 @@ export default function DeshboardNav() {
             {settingClicked ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
           <div
-            className={`w-full ${
+            className={`w-full deshboardNav ${
               settingClicked ? "flex" : "hidden"
             } my-2 flex-col`}
           >

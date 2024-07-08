@@ -51,7 +51,7 @@ export default function LinkedInPostComponent() {
       <div className="w-full rounded-md flex justify-center items-center">
         <img
           src={linkedinpostComponent}
-          alt=""
+          alt="LinkedIn Post"
           className="max-w-full max-h-[500px]"
         />
       </div>

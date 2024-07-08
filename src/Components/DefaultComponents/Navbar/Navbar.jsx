@@ -81,7 +81,7 @@ export default function NavBar() {
           </ul>
           <Link
             className=" bg-white font-[400] p-2 px-5 rounded-full"
-            to={"/my_content"}
+            to={"/deshboard_home"}
           >
             Start for FREE
           </Link>

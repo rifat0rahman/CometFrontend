@@ -23,6 +23,7 @@ import Affiliate from "../../HomeComponents/Affiliate/Affiliate";
 import AuthRoot from "../../HomeComponents/Authcatin/AuthRoot";
 import Login from "../../HomeComponents/Authcatin/Login";
 import SignUp from "../../HomeComponents/Authcatin/SignUp";
+import DeshboardHome from "../../DeshboardComponents/userDeshboard/DeshboardHome/DeshboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
     path: "/",
     element: <DeshboardRoot></DeshboardRoot>,
     children: [
+      {
+        path: "/deshboard_home",
+        element: <DeshboardHome></DeshboardHome>,
+      },
       {
         path: "/my_content",
         element: <MyContent></MyContent>,
