@@ -48,6 +48,10 @@ export default function AiCarousel() {
         />
         <div className="hidden sm:block">{CreateCarocelButton}</div>
       </div>
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 p-3 md:grid-cols-3 gap-3">
+        <div className="w-full col-span-1 md:col-span-2 rounded-md p-10 bg-black"></div>
+        <div className="w-full p-10 bg-black rounded-md"></div>
+      </div>
     </div>
   );
 }
