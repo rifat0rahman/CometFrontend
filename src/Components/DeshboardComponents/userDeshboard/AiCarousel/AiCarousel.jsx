@@ -1,4 +1,6 @@
 import { MdOutlineAutoAwesome } from "react-icons/md";
+import Carousel from "./Carousel";
+import SideTab from "./SideTab";
 
 export default function AiCarousel() {
   const CreateCarocelButton = (
@@ -49,8 +51,12 @@ export default function AiCarousel() {
         <div className="hidden sm:block">{CreateCarocelButton}</div>
       </div>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 p-3 md:grid-cols-3 gap-3">
-        <div className="w-full col-span-1 md:col-span-2 rounded-md p-10 bg-black"></div>
-        <div className="w-full p-10 bg-black rounded-md"></div>
+        <div className="w-full col-span-1 md:col-span-2 rounded-md overflow-hidden ">
+          <Carousel></Carousel>
+        </div>
+        <div className="w-full border rounded-md overflow-hidden">
+          <SideTab></SideTab>
+        </div>
       </div>
     </div>
   );
