@@ -1,12 +1,17 @@
 import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineUsers } from "react-icons/hi";
 import { PiPencilLineBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 export default function Setting() {
   return (
     <div className="w-full">
-      <div className="w-full p-3 border-b">
+      <div className="w-full p-3 border-b flex justify-between items-center">
         <h4 className="text-xl font-medium text-gray-600">Settings</h4>
+        <button className="flex justify-center items-center gap-3 px-4 p-2 rounded bg-gray-200 hover:bg-gray-300">
+          <HiOutlineUsers />
+          invite users
+        </button>
       </div>
       {/* ------------------- main contant -----------  */}
       <div className="w-full flex flex-col gap-3 p-3">
