@@ -186,22 +186,27 @@ export default function DeshboardNav() {
           </div>
         </div>
         {/* -------------------------------support nav items --------------------- */}
-        <NavLink
-          to={`/support`}
-          className="flex w-full p-2 rounded-md hover:bg-blue-50 items-center"
-        >
-          <AiOutlineCustomerService className="text-2xl mr-2" />
-          Support
-        </NavLink>
+        <div className="deshboardNav">
+          <NavLink
+            to={`/support`}
+            className="flex w-full p-2 rounded-md hover:bg-blue-50 items-center"
+          >
+            <AiOutlineCustomerService className="text-2xl mr-2" />
+            Support
+          </NavLink>
+        </div>
       </div>
       {/* ----------------------------------profile content-------------------------- */}
-      <NavLink
-        to={"/product_roadmap"}
-        className="flex w-full p-2 rounded-md hover:bg-blue-50 items-center"
-      >
-        <AiOutlineRocket className="text-2xl mr-2" />
-        Product Roadmap
-      </NavLink>
+      <div className="deshboardNav">
+        <NavLink
+          to={"/product_roadmap"}
+          className="flex w-full p-2 rounded-md hover:bg-blue-50 items-center"
+        >
+          <AiOutlineRocket className="text-2xl mr-2" />
+          Product Roadmap
+        </NavLink>
+      </div>
+
       <div
         onClick={() => navigate("/account")}
         className="w-full mt-2 cursor-pointer border rounded-md border-gray-300 hover:border-blue-500 p-2 flex justify-start items-center gap-4"

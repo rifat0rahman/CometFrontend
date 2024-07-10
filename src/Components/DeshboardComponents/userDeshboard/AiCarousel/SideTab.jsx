@@ -5,7 +5,7 @@ export default function SideTab() {
   const [activeTab, setActiveTab] = useState("template");
 
   return (
-    <div className="max-w-md mx-auto max-h-[350px] shadow-lg rounded-lg overflow-y-auto">
+    <div className="max-w-md mx-auto max-h-[350px] rounded-lg overflow-y-auto">
       <div className="flex  justify-around border-b">
         <button
           onClick={() => setActiveTab("template")}

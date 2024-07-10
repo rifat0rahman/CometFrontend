@@ -24,7 +24,7 @@ export default function DeshboardHeaderNav() {
         </NavLink>
         <NavLink
           className={`flex justify-center items-center gap-1`}
-          to={`/workspace`}
+          to={`/setting`}
         >
           <MdOutlineSettingsApplications />
           <span className="sm:block hidden">Setting</span>
