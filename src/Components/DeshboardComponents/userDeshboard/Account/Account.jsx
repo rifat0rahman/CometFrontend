@@ -13,6 +13,9 @@ export default function Account() {
   const onSubmit = (data) => {
     console.log(data);
   };
+  const onSubmitForm2 = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="w-full">
@@ -86,7 +89,7 @@ export default function Account() {
           </h4>
           <form
             className="w-full p-3 flex flex-col gap-4"
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmitForm2)}
           >
             <div className="w-full">
               <label>Name</label>
