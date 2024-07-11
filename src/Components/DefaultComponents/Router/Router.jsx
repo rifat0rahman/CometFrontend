@@ -25,6 +25,7 @@ import Login from "../../HomeComponents/Authcatin/Login";
 import SignUp from "../../HomeComponents/Authcatin/SignUp";
 import DeshboardHome from "../../DeshboardComponents/userDeshboard/DeshboardHome/DeshboardHome";
 import Setting from "../../DeshboardComponents/userDeshboard/Setting/Setting";
+import GenerateIdeas from "../../DeshboardComponents/userDeshboard/GenerateIdeas/GenerateIdeas";
 
 export const router = createBrowserRouter([
   {
@@ -113,6 +114,10 @@ export const router = createBrowserRouter([
       {
         path: "/product_roadmap",
         element: <ProductRoadmap></ProductRoadmap>,
+      },
+      {
+        path: "/generate_ideas",
+        element: <GenerateIdeas></GenerateIdeas>,
       },
       {
         path: "/setting",

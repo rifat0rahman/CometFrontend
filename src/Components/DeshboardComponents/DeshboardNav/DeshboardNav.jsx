@@ -11,6 +11,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import profile from "../../../image/sample-profile.jpeg";
 import { FaList } from "react-icons/fa";
 import { CiSquareRemove } from "react-icons/ci";
+import { VscLightbulbSparkle } from "react-icons/vsc";
 
 export default function DeshboardNav() {
   const [createClicked, setCreateClicked] = useState(false);
@@ -69,7 +70,7 @@ export default function DeshboardNav() {
           </span>
         </div>
         {/* --------------------create nab items ---------------------------- */}
-        <div className="max-w-full mb-1 py-2">
+        <div className="max-w-full py-2">
           <div
             onClick={() => setCreateClicked(!createClicked)}
             className="w-full flex justify-between items-center cursor-pointer p-2 rounded-md hover:bg-blue-50"
@@ -112,7 +113,7 @@ export default function DeshboardNav() {
           </div>
         </div>
         {/* ----------------------manage nav items -------------------------- */}
-        <div className="max-w-full mb-1 py-2">
+        <div className="max-w-full py-2">
           <div
             onClick={() => setManageClicked(!manageClicked)}
             className="w-full flex justify-between items-center cursor-pointer p-2 rounded-md hover:bg-blue-50"
@@ -149,7 +150,7 @@ export default function DeshboardNav() {
           </div>
         </div>
         {/* --------------------------------settinge nav items--------------------- */}
-        <div className="max-w-full mb-1 py-2">
+        <div className="max-w-full py-2">
           <div
             onClick={() => setSettingClicked(!settingClicked)}
             className="w-full flex justify-between items-center cursor-pointer p-2 rounded-md hover:bg-blue-50"
@@ -184,6 +185,16 @@ export default function DeshboardNav() {
               Billing
             </NavLink>
           </div>
+        </div>
+        {/* -------------------------------generate_ideas nav items --------------------- */}
+        <div className="deshboardNav mb-1">
+          <NavLink
+            to={`/generate_ideas`}
+            className="flex w-full p-2 rounded-md hover:bg-blue-50 items-center"
+          >
+            <VscLightbulbSparkle className="text-2xl mr-2" />
+            Ideation
+          </NavLink>
         </div>
         {/* -------------------------------support nav items --------------------- */}
         <div className="deshboardNav">

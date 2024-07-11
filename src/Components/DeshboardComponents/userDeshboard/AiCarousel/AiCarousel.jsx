@@ -9,6 +9,7 @@ export default function AiCarousel() {
       Generate Carousel
     </button>
   );
+
   return (
     <div className="w-full">
       <div className="w-full p-3 border-b">
