@@ -16,7 +16,7 @@ export default function InspirationButtons() {
         </div>
       </div>
       <div className="sm:block hidden">
-        <div className="w-full border-b p-3  flex items-center justify-start gap-x-3 overflow-y-scroll scrollbar">
+        <div className="w-full border-b p-3  flex items-center justify-start gap-2 flex-wrap">
           {buttonsArray.map((_, index) => (
             <button
               key={index}
