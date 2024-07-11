@@ -2,6 +2,7 @@ import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineUsers } from "react-icons/hi";
 import { PiPencilLineBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import Languages from "./Languages";
 
 export default function Setting() {
   return (
@@ -26,15 +27,7 @@ export default function Setting() {
               Choose your preferred language for LinkedIn posts
             </p>
           </div>
-          <div className="w-full sm:w-auto">
-            <select className="select select-bordered w-full sm:w-[200px]">
-              <option className="!w-full" disabled selected>
-                Who shot first?
-              </option>
-              <option className="!w-full">Han Solo</option>
-              <option className="!w-full">Greedo</option>
-            </select>
-          </div>
+          <Languages></Languages>
         </div>
 
         {/* -------------------- secend option --------------  */}
